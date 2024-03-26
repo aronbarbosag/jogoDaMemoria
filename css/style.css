@@ -1,0 +1,20 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.box img {
+  height: 100px;
+  width: 100px;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
