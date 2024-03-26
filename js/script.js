@@ -1,4 +1,6 @@
-const posicoes = [0, 1, 2, 3];
+const posicoes = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+];
 
 function embaralha(lista) {
   for (let i = lista.length; i; i--) {

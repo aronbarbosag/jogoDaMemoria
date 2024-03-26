@@ -1,20 +1,27 @@
+body {
+  height: 100vh;
+  background-color: #121212;
+}
+
 .box {
-  width: 100px;
+  width: 150px;
   height: 100px;
   background-color: #ccc;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
 }
 .box img {
   height: 100px;
-  width: 100px;
+  width: 100%;
 }
 
 .container {
-  width: 400px;
-  height: 400px;
+  width: 1000px;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(4, 100px);
+  gap: 20px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
