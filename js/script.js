@@ -25,3 +25,16 @@ function trocarImagem() {
   });
 }
 console.log(posicoes);
+
+//evento de clicar na imagem e adicionar a classe ativo na imagem;
+const container = document.querySelector(".container");
+
+function handleClick(event) {
+  event.preventDefault();
+
+  if (event.target.classList.value !== "container") {
+    event.target.classList.add("ativo");
+  }
+}
+
+container.addEventListener("click", handleClick);

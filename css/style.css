@@ -11,6 +11,7 @@ body {
 .box img {
   height: 100px;
   width: 100%;
+  opacity: 0;
 }
 
 .container {
@@ -24,4 +25,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.ativo {
+  transition: 0.4s;
+  animation: rotacionar 0.8s ease-in-out forwards;
+}
+@keyframes rotacionar {
+  from {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(180deg);
+  }
 }
