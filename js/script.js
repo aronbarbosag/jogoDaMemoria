@@ -6,7 +6,6 @@ function embaralha(lista) {
   for (let i = lista.length; i; i--) {
     const indiceAleatorio = Math.floor(Math.random() * i);
 
-    // guarda de um índice aleatório da lista
     const elemento = lista[i - 1];
 
     lista[i - 1] = lista[indiceAleatorio];
@@ -21,29 +20,26 @@ embaralha(posicoes);
 function trocarImagem() {
   posicoes.forEach((posicao, index) => {
     const div = document.getElementById(`${posicao}`);
-    div.querySelector("img").src = `./imagens/imagem${index}.jpg`;
+    div.querySelector('.card-back img').src = `./imagens/imagem${index}.jpg`;
   });
 }
-console.log(posicoes);
 
 function handleClick(event) {
   event.preventDefault();
-
-  if (event.target.classList.value !== "box") {
-    event.target.classList.add("ativo");
-  }
+  const target = event.currentTarget.querySelector('.card-inner');
+  target.classList.add('ativo');
 }
 
 function hiddenImg(event) {
   event.preventDefault();
 }
 
-const cards = document.querySelectorAll(".box");
+const cards = document.querySelectorAll('.card');
 cards.forEach((card) => {
-  card.addEventListener("click", handleClick);
+  card.addEventListener('click', handleClick);
 });
 
-const imgs = document.querySelectorAll("img");
+const imgs = document.querySelectorAll('img');
 imgs.forEach((img) => {
-  img.addEventListener("mousedown", hiddenImg);
+  img.addEventListener('mousedown', hiddenImg);
 });
