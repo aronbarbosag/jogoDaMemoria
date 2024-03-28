@@ -26,15 +26,24 @@ function trocarImagem() {
 }
 console.log(posicoes);
 
-//evento de clicar na imagem e adicionar a classe ativo na imagem;
-const container = document.querySelector(".container");
-
 function handleClick(event) {
   event.preventDefault();
 
-  if (event.target.classList.value !== "container") {
+  if (event.target.classList.value !== "box") {
     event.target.classList.add("ativo");
   }
 }
 
-container.addEventListener("click", handleClick);
+function hiddenImg(event) {
+  event.preventDefault();
+}
+
+const cards = document.querySelectorAll(".box");
+cards.forEach((card) => {
+  card.addEventListener("click", handleClick);
+});
+
+const imgs = document.querySelectorAll("img");
+imgs.forEach((img) => {
+  img.addEventListener("mousedown", hiddenImg);
+});
