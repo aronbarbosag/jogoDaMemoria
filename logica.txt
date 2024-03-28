@@ -1,17 +1,9 @@
-logica para saber se a carta escolhida bateu com a anterior
+Lógica para verificar se a carta escolhida corresponde à anterior:
 
-no primeiro clique adicionar a classe match a imagem e se no segundo clique nao
-ocorrer a logica das cartas serem igual entao tira a classe match.
+No primeiro clique, adicione a classe "match" à imagem. Se no segundo clique essa lógica não ocorrer, remova a classe "match".
 
-no primeiro clique pegar o src da imagem e filtrar pelo numero com o regexp.
-fazer a condição se o numero pegado for par o match com ele sera ele + 1,
-se for impar sera ele menos 1.
+No primeiro clique, obtenha o src da imagem e filtre-o pelo número utilizando uma expressão regular (regexp). Estabeleça a condição: se o número obtido for par, o "match" será o número mais 1; se for ímpar, será o número menos 1.
 
-no proximo clique comparar o numero da imagem atual com o match passado,
-se forem iguais adicione a classe match na imagem, senão tira a classe match 
-e ativo, numero match devera ser colocado como undefined.
+No próximo clique, compare o número da imagem atual com o "match" anterior. Se forem iguais, adicione a classe "match" à imagem; caso contrário, remova a classe "match" e defina o número do "match" como undefined.
 
-no clique impar o match é definido, no clique par é feito a comparação caso nao
-nao haja igualdade o match passa a ser undefined e sera definido novamente no 
-proximo clique.
-
+No clique ímpar, o "match" é definido. No clique par, é feita a comparação. Caso não haja igualdade, o "match" se torna undefined e será definido novamente no próximo clique.
