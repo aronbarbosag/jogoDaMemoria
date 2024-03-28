@@ -1,0 +1,9 @@
+Lógica para verificar se a carta escolhida corresponde à anterior:
+
+No primeiro clique, adicione a classe "match" à imagem. Se no segundo clique essa lógica não ocorrer, remova a classe "match".
+
+No primeiro clique, obtenha o src da imagem e filtre-o pelo número utilizando uma expressão regular (regexp). Estabeleça a condição: se o número obtido for par, o "match" será o número mais 1; se for ímpar, será o número menos 1.
+
+No próximo clique, compare o número da imagem atual com o "match" anterior. Se forem iguais, adicione a classe "match" à imagem; caso contrário, remova a classe "match" e defina o número do "match" como undefined.
+
+No clique ímpar, o "match" é definido. No clique par, é feita a comparação. Caso não haja igualdade, o "match" se torna undefined e será definido novamente no próximo clique.
