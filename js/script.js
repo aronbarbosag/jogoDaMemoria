@@ -24,7 +24,8 @@ function trocarImagem() {
   });
 }
 let clique = 0;
-
+let matchProximo;
+let targetAnterior;
 function handleClick(event) {
   clique++;
   event.preventDefault();
@@ -33,12 +34,29 @@ function handleClick(event) {
   console.log(this.querySelector('.card-back img').getAttribute('src'));
   const atributoSrc = this.querySelector('.card-back img').getAttribute('src');
   const numeroImagem = +atributoSrc.match(/\d+/)[0];
-  let matchProximo;
-  if (numeroImagem % 2 === 0) {
-    matchProximo = numeroImagem + 1;
+  if (clique % 2 !== 0) {
+    targetAnterior = target;
+    if (numeroImagem % 2 === 0) {
+      matchProximo = numeroImagem + 1;
+    } else {
+      matchProximo = numeroImagem - 1;
+    }
   } else {
-    matchProximo = numeroImagem - 1;
+    if (numeroImagem === matchProximo) {
+      console.log('deu match');
+      target.classList.add('match');
+    } else {
+      target.classList.add('ativo');
+
+      setTimeout(() => {
+        targetAnterior.classList.remove('ativo');
+        target.classList.remove('ativo');
+      }, 900);
+
+      matchProximo = undefined;
+    }
   }
+
   console.log(numeroImagem);
   console.log('proximo:', matchProximo);
 }
