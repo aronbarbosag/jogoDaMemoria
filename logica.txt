@@ -7,3 +7,16 @@ No primeiro clique, obtenha o src da imagem e filtre-o pelo número utilizando u
 No próximo clique, compare o número da imagem atual com o "match" anterior. Se forem iguais, adicione a classe "match" à imagem; caso contrário, remova a classe "match" e defina o número do "match" como undefined.
 
 No clique ímpar, o "match" é definido. No clique par, é feita a comparação. Caso não haja igualdade, o "match" se torna undefined e será definido novamente no próximo clique.
+
+
+//logica para mudar de nivel
+haverá 3 niveis( nivel 1, nivel 2 e nivel 3);
+nivel 1 tera 20 cartas totais,sendo 10 diferentes e 10 copias;
+nivel 2 tera 30 cartas totais, sendo 15 diferentes e 15 copias;
+nivel 3 tera 40 cartas totais, sendo 20 diferentes e 20 copias;
+
+Ao selecionar o nivel 2 ou 3 o numero de posicoes deve ser acrescentada,
+e o modelo de html criado acrescentado via js.
+
+
+//colocar um setTimeout após cada clique par e desativar a funcionalidade de clique por um breve intervalo de tempo, afim de evitar bugs de clicar em varias cartas muito rapidamente fazendo com que a logica bugue.

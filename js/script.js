@@ -74,3 +74,5 @@ const imgs = document.querySelectorAll('img');
 imgs.forEach((img) => {
   img.addEventListener('mousedown', hiddenImg);
 });
+
+const nivel = document.getElementById('niveis');
