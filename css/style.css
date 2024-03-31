@@ -33,6 +33,7 @@ body {
   position: relative;
   perspective: 1000px;
 }
+
 .card-front img,
 .card-back img {
   width: 100%;
@@ -59,4 +60,20 @@ body {
 }
 .match {
   border: 3px solid red;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 95vw;
+    margin: 0 auto;
+  }
+  .card {
+    width: 16vw;
+    height: 9vh;
+  }
+
+  .card-front img {
+    width: 100%;
+    height: 100%;
+  }
 }
