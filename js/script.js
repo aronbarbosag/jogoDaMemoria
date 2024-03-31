@@ -1,3 +1,5 @@
+'use strict';
+
 const posicoes = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 ];
@@ -31,7 +33,7 @@ function handleClick(event) {
   event.preventDefault();
   const target = event.currentTarget.querySelector('.card-inner');
   target.classList.add('ativo');
-  console.log(this.querySelector('.card-back img').getAttribute('src'));
+
   const atributoSrc = this.querySelector('.card-back img').getAttribute('src');
   const numeroImagem = +atributoSrc.match(/\d+/)[0];
   if (clique % 2 !== 0) {
@@ -43,7 +45,6 @@ function handleClick(event) {
     }
   } else {
     if (numeroImagem === matchProximo) {
-      console.log('deu match');
       target.classList.add('match');
     } else {
       target.classList.add('ativo');
@@ -52,13 +53,14 @@ function handleClick(event) {
         targetAnterior.classList.remove('ativo');
         target.classList.remove('ativo');
       }, 900);
+      desativarClique();
+      setTimeout(() => {
+        ativarClique();
+      }, 1000);
 
       matchProximo = undefined;
     }
   }
-
-  console.log(numeroImagem);
-  console.log('proximo:', matchProximo);
 }
 
 function hiddenImg(event) {
@@ -68,6 +70,7 @@ function hiddenImg(event) {
 const cards = document.querySelectorAll('.card');
 cards.forEach((card) => {
   card.addEventListener('click', handleClick);
+  card.addEventListener('touch', handleClick);
 });
 
 const imgs = document.querySelectorAll('img');
@@ -76,3 +79,17 @@ imgs.forEach((img) => {
 });
 
 const nivel = document.getElementById('niveis');
+
+function desativarClique() {
+  cards.forEach((card) => {
+    card.removeEventListener('click', handleClick);
+    card.removeEventListener('touch', handleClick);
+  });
+}
+
+function ativarClique() {
+  cards.forEach((card) => {
+    card.addEventListener('click', handleClick);
+    card.addEventListener('touch', handleClick);
+  });
+}
