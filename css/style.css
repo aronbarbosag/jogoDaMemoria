@@ -59,7 +59,7 @@ body {
   transform: rotateY(-180deg);
 }
 .match {
-  border: 3px solid red;
+  border: 3px solid #1aeb7d;
 }
 
 @media (max-width: 900px) {
