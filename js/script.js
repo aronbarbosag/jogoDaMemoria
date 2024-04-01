@@ -46,6 +46,7 @@ function handleClick(event) {
   } else {
     if (numeroImagem === matchProximo) {
       target.classList.add('match');
+      targetAnterior.classList.add('match');
     } else {
       target.classList.add('ativo');
 
