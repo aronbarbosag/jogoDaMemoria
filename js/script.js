@@ -36,30 +36,35 @@ function handleClick(event) {
 
   const atributoSrc = this.querySelector('.card-back img').getAttribute('src');
   const numeroImagem = +atributoSrc.match(/\d+/)[0];
-  if (clique % 2 !== 0) {
-    targetAnterior = target;
-    if (numeroImagem % 2 === 0) {
-      matchProximo = numeroImagem + 1;
-    } else {
-      matchProximo = numeroImagem - 1;
-    }
-  } else {
-    if (numeroImagem === matchProximo) {
-      target.classList.add('match');
-      targetAnterior.classList.add('match');
-    } else {
-      target.classList.add('ativo');
 
-      setTimeout(() => {
-        targetAnterior.classList.remove('ativo');
-        target.classList.remove('ativo');
-      }, 900);
-      desativarClique();
-      setTimeout(() => {
-        ativarClique();
-      }, 1000);
+  if (!target.classList.contains('match')) {
+    if (clique % 2 !== 0) {
+      targetAnterior = target;
+      if (numeroImagem % 2 === 0) {
+        matchProximo = numeroImagem + 1;
+      } else {
+        matchProximo = numeroImagem - 1;
+      }
+    } else {
+      if (numeroImagem === matchProximo) {
+        target.classList.add('match');
+        targetAnterior.classList.add('match');
+        desativarCliqueNoMatch(target);
+        desativarCliqueNoMatch(targetAnterior);
+      } else {
+        target.classList.add('ativo');
 
-      matchProximo = undefined;
+        setTimeout(() => {
+          targetAnterior.classList.remove('ativo');
+          target.classList.remove('ativo');
+        }, 900);
+        desativarClique();
+        setTimeout(() => {
+          ativarClique();
+        }, 1000);
+
+        matchProximo = undefined;
+      }
     }
   }
 }
@@ -86,6 +91,11 @@ function desativarClique() {
     card.removeEventListener('click', handleClick);
     card.removeEventListener('touch', handleClick);
   });
+}
+
+function desativarCliqueNoMatch(target) {
+  target.removeEventListener('click', handleClick);
+  target.removeEventListener('touch', handleClick);
 }
 
 function ativarClique() {
