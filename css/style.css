@@ -46,7 +46,7 @@ body {
   width: 1000px;
 
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   grid-template-rows: repeat(4, auto);
   gap: 10px;
   position: relative;
