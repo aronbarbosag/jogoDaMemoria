@@ -59,17 +59,19 @@ body {
   transform: rotateY(-180deg);
 }
 .match {
-  border: 3px solid #1aeb7d;
+  border: 1px solid #1aeb7d;
 }
 
 @media (max-width: 900px) {
   .container {
     width: 95vw;
     margin: 0 auto;
+    gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
   }
   .card {
-    width: 16vw;
-    height: 9vh;
+    width: 95%;
   }
 
   .card-front img {
