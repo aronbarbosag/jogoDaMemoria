@@ -26,6 +26,8 @@ function trocarImagem() {
     div.querySelector('.card-back img').src = `./imagens/imagem${index}.jpg`;
   });
 }
+let tempoInicio;
+let contador = 0;
 let clique = 0;
 let matchProximo;
 let targetAnterior;
@@ -48,6 +50,7 @@ function handleClick(event) {
       }
     } else {
       if (numeroImagem === matchProximo) {
+        contador++;
         target.classList.add('match');
         targetAnterior.classList.add('match');
         desativarCliqueNoMatch(target);
@@ -67,6 +70,10 @@ function handleClick(event) {
         matchProximo = undefined;
       }
     }
+  }
+
+  if (contador === 12) {
+    layoutFimJogo.classList.remove('hidden');
   }
 }
 
@@ -104,4 +111,12 @@ function ativarClique() {
     card.addEventListener('click', handleClick);
     card.addEventListener('touch', handleClick);
   });
+}
+
+const btnRecomecar = document.getElementById('recomecar');
+const layoutFimJogo = document.querySelector('.fimJogo');
+btnRecomecar.addEventListener('click', recomecarJogo);
+function recomecarJogo(e) {
+  e.preventDefault();
+  window.location.reload(true);
 }
