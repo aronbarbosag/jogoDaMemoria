@@ -80,7 +80,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     top: 40%;
-    left: 45%;
+    left: 50%;
   }
   .card {
     width: 85px;
