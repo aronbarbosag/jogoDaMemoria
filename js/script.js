@@ -74,6 +74,7 @@ function handleClick(event) {
 
   if (contador === 12) {
     layoutFimJogo.classList.remove('hidden');
+    overflow.classList.remove('hidden');
   }
 }
 
@@ -115,6 +116,7 @@ function ativarClique() {
 
 const btnRecomecar = document.getElementById('recomecar');
 const layoutFimJogo = document.querySelector('.fimJogo');
+const overflow = document.querySelector('.overflow');
 btnRecomecar.addEventListener('click', recomecarJogo);
 function recomecarJogo(e) {
   e.preventDefault();
